@@ -7,10 +7,13 @@
 <div class="offcanvas-menu-overlay"></div>
 <div class="offcanvas-menu-wrapper">
   <div class="offcanvas__option">
-      <div class="offcanvas__links">
-          <a routerLink="login">Iniciar Sesión</a>
-          <a routerLink="register">Registrarse</a>
-          <a routerLink="changepassword">Cambiar Contraseña</a>
+      <div class="offcanvas__top__hover">
+        <span>Accesos <i class="arrow_carrot-down"></i></span>
+        <ul>
+            <li><a routerLink="login" style="color: #000;">Iniciar Sesión</a></li>
+            <li><a routerLink="register" style="color: #000;">Registrarse</a></li>
+            <li><a routerLink="changepassword"  style="color: #000;">Cambiar Contraseña</a></li>
+        </ul>
       </div>
   </div>
   <div class="offcanvas__nav__option">
@@ -32,10 +35,13 @@
               </div>
               <div class="col-lg-6 col-md-5">
                   <div class="header__top__right">
-                      <div class="header__top__links">
-                        <a routerLink="login">Iniciar Sesión</a>
-                        <a routerLink="register">Registrarse</a>
-                        <a routerLink="changepassword">Cambiar Contraseña</a>
+                      <div class="header__top__hover">
+                        <span>Accesos <i class="arrow_carrot-down"></i></span>
+                        <ul>
+                            <li><a routerLink="login" style="color: #000;">Iniciar Sesión</a></li>
+                            <li><a routerLink="register" style="color: #000;">Registrarse</a></li>
+                            <li><a routerLink="changepassword" style="color: #000;">Cambiar Contraseña</a></li>
+                        </ul>
                       </div>
                   </div>
               </div>
@@ -65,6 +71,11 @@
                       </li>
                       <li><a href="./blog.html">Blog</a></li>
                       <li><a href="./contact.html">Contacts</a></li>
+                      <li><a href="#">Admin</a>
+                        <ul class="dropdown">
+                            <li><a routerLink="product">Producto</a></li>
+                        </ul>
+                    </li>
                   </ul>
               </nav>
           </div>
