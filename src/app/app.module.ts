@@ -7,6 +7,8 @@ import { LoginComponent } from './access/login/login.component';
 import { RegisterComponent } from './access/register/register.component';
 import { ChangePasswordComponent } from './access/change-password/change-password.component';
 import { ProductComponent } from './access/product/product.component';
+import { ContactComponent } from './access/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { ProductComponent } from './access/product/product.component';
     LoginComponent,
     RegisterComponent,
     ChangePasswordComponent,
-    ProductComponent
+    ProductComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
