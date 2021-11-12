@@ -24,7 +24,7 @@ import { PagoComponent } from './pago/pago.component';
     RegisterComponent,
     ChangePasswordComponent,
     ProductComponent,
-    ContactComponent
+    ContactComponent,
     HomeComponent,
     TiendaComponent,
     CarritoComponent,
