@@ -11,6 +11,7 @@ import { PagoComponent } from './pago/pago.component';
 import { TiendaComponent } from './tienda/tienda.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'changepassword', component: ChangePasswordComponent },
