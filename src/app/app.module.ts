@@ -8,13 +8,15 @@ import { RegisterComponent } from './access/register/register.component';
 
 import { ChangePasswordComponent } from './access/change-password/change-password.component';
 import { ProductComponent } from './access/product/product.component';
-import { ContactComponent } from './access/contact/contact.component';
+import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { HomeComponent } from './home/home.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { PagoComponent } from './pago/pago.component';
+import { ComplaintsComponent } from './complaints/complaints.component';
+import { OrdersComponent } from './access/orders/orders.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { PagoComponent } from './pago/pago.component';
     HomeComponent,
     TiendaComponent,
     CarritoComponent,
-    PagoComponent
+    PagoComponent,
+    ComplaintsComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
