@@ -13,6 +13,7 @@ import { ComplaintsComponent } from './complaints/complaints.component';
 import { OrdersComponent } from './access/orders/orders.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'changepassword', component: ChangePasswordComponent },
