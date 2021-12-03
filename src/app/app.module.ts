@@ -7,7 +7,7 @@ import { LoginComponent } from './access/login/login.component';
 import { RegisterComponent } from './access/register/register.component';
 
 import { ChangePasswordComponent } from './access/change-password/change-password.component';
-import { ProductComponent } from './access/product/product.component';
+import { ProductComponent } from './maintenance/product/product.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -16,7 +16,7 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { PagoComponent } from './pago/pago.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
-import { OrdersComponent } from './access/orders/orders.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 @NgModule({
