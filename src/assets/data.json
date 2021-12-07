@@ -1,0 +1,364 @@
+{
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Tienda",
+        "id_menu_padre": null,
+        "orden": 1,
+        "icon": "id1.png",
+        "routerLink": "tienda",
+        "estado": 1,
+        "submenu": null
+      },
+      {
+        "id": 2,
+        "nombre": "Páginas",
+        "id_menu_padre": null,
+        "orden": 2,
+        "icon": "id2.png",
+        "routerLink": "",
+        "estado": 1,
+        "submenu": [
+          {
+            "id": 6,
+            "nombre": "Nosotros",
+            "id_menu_padre": 2,
+            "orden": 1,
+            "icon": "id5.png",
+            "routerLink": "about",
+            "estado": 1,
+            "submenu": null
+          },
+          {
+            "id": 7,
+            "nombre": "Detalle",
+            "id_menu_padre": 2,
+            "orden": 2,
+            "icon": "id5.png",
+            "routerLink": "shop-details",
+            "estado": 1,
+            "submenu": null
+          },
+          {
+            "id": 8,
+            "nombre": "Carrito",
+            "id_menu_padre": 2,
+            "orden": 3,
+            "icon": "id5.png",
+            "routerLink": "carrito",
+            "estado": 1,
+            "submenu": null
+          },
+          {
+            "id": 9,
+            "nombre": "Check Out",
+            "id_menu_padre": 2,
+            "orden": 4,
+            "icon": "id5.png",
+            "routerLink": "pago",
+            "estado": 1,
+            "submenu": null
+          },
+          {
+            "id": 10,
+            "nombre": "Blog Details",
+            "id_menu_padre": 2,
+            "orden": 5,
+            "icon": "id5.png",
+            "routerLink": "blog-details",
+            "estado": 1,
+            "submenu": null
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "nombre": "Blog",
+        "id_menu_padre": null,
+        "orden": 3,
+        "icon": "id3.png",
+        "routerLink": "blog",
+        "estado": 1,
+        "submenu": null
+      },
+      {
+        "id": 4,
+        "nombre": "Contacto",
+        "id_menu_padre": null,
+        "orden": 4,
+        "icon": "id4.png",
+        "routerLink": "contact",
+        "estado": 1,
+        "submenu": null
+      },
+      {
+        "id": 5,
+        "nombre": "Admin",
+        "id_menu_padre": null,
+        "orden": 5,
+        "icon": "id5.png",
+        "routerLink": "",
+        "estado": 1,
+        "submenu": [
+          {
+            "id": 11,
+            "nombre": "Producto",
+            "id_menu_padre": 5,
+            "orden": 1,
+            "icon": "id5.png",
+            "routerLink": "product",
+            "estado": 1,
+            "submenu": null
+          }
+        ]
+      }
+      
+    ],
+
+    "filters":[
+      {
+        "cat":[
+          {
+            "id": 1,
+            "nombre": "Hombres",
+            "cantidad": "10"
+          },
+          {
+            "id": 2,
+            "nombre": "Mujer",
+            "cantidad": "20"
+          },
+          {
+            "id": 3,
+            "nombre": "Ropa",
+            "cantidad": "30"
+          },
+          {
+            "id": 4,
+            "nombre": "Zapatillas",
+            "cantidad": "10"
+          },
+          {
+            "id": 5,
+            "nombre": "Accesorios",
+            "cantidad": "10"
+          },
+          {
+            "id": 6,
+            "nombre": "Niños",
+            "cantidad": "5"
+          }
+        ],
+        "price":[
+          {
+            "id": 1,
+            "tag": "S/. 0.00 - S/. 50.00",
+            "min": 0.00,
+            "max": 50.00
+          },
+          {
+            "id": 2,
+            "tag": "S/. 50.00 - S/. 100.00",
+            "min": 50.00,
+            "max": 100.00
+          },
+          {
+            "id": 3,
+            "tag": "S/. 100.00 - S/. 150.00",
+            "min": 100.00,
+            "max": 150.00
+          },
+          {
+            "id": 4,
+            "tag": "S/. 150.00 - S/. 200.00",
+            "min": 150.00,
+            "max": 200.00
+          },
+          {
+            "id": 5,
+            "tag": "S/. 200.00+",
+            "min": 200.00,
+            "max": 999.00
+          }
+        ],
+        "size":[
+          {
+            "id": 1,
+            "tag": "XS"
+          },
+          {
+            "id": 2,
+            "tag": "S"
+          },
+          {
+            "id": 3,
+            "tag": "M"
+          },
+          {
+            "id": 4,
+            "tag": "XL"
+          },
+          {
+            "id": 5,
+            "tag": "2XL"
+          }
+        ],
+        "color": [
+          {
+            "id": "1",
+            "color": "negro",
+            "hex": "",
+            "class": "c-1"
+          },
+          {
+            "id": "2",
+            "color": "azul",
+            "hex": "",
+            "class": "c-2"
+          },
+          {
+            "id": "3",
+            "color": "amarillo",
+            "hex": "",
+            "class": "c-3"
+          },
+          {
+            "id": "4",
+            "color": "plomo",
+            "hex": "",
+            "class": "c-4"
+          },
+          {
+            "id": "5",
+            "color": "verde",
+            "hex": "",
+            "class": "c-5"
+          },
+          {
+            "id": "6",
+            "color": "rosado",
+            "hex": "",
+            "class": "c-6"
+          },
+          {
+            "id": "7",
+            "color": "morado",
+            "hex": "",
+            "class": "c-7"
+          },
+          {
+            "id": "8",
+            "color": "rojo",
+            "hex": "",
+            "class": "c-8"
+          },
+          {
+            "id": "9",
+            "color": "blanco",
+            "hex": "",
+            "class": "c-9"
+          }
+        ]
+      }
+
+    ],
+    "products":[
+      {
+        "id":1,
+        "nombre": "Chaqueta One",
+        "stars": 4,
+        "precio": 159.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-2.jpg"
+      },
+      {
+        "id":2,
+        "nombre": "Zapatillas XYZ",
+        "stars": 4,
+        "precio": 139.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-3.jpg"
+      },
+      {
+        "id":3,
+        "nombre": "Polera textura",
+        "stars": 4,
+        "precio": 169.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-4.jpg"
+      },
+      {
+        "id":4,
+        "nombre": "Pañuelo ELO",
+        "stars": 4,
+        "precio": 39.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-6.jpg"
+      },
+      {
+        "id":5,
+        "nombre": "Mochila ILA",
+        "stars": 4,
+        "precio": 69.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-7.jpg"
+      },
+      {
+        "id":6,
+        "nombre": "Mica ICA",
+        "stars": 4,
+        "precio": 59.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-8.jpg"
+      },
+      {
+        "id":7,
+        "nombre": "Polo Flores",
+        "stars": 4,
+        "precio": 49.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-9.jpg"
+      },
+      {
+        "id":8,
+        "nombre": "Multi-pocket Locion",
+        "stars": 4,
+        "precio": 89.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-10.jpg"
+      },
+      {
+        "id":9,
+        "nombre": "Mochila White",
+        "stars": 4,
+        "precio": 69.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-11.jpg"
+      },
+      {
+        "id":10,
+        "nombre": "Polera guerrillera",
+        "stars": 4,
+        "precio": 79.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-12.jpg"
+      },
+      {
+        "id":11,
+        "nombre": "Portafolio EX",
+        "stars": 4,
+        "precio": 99.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-13.jpg"
+      },
+      {
+        "id":12,
+        "nombre": "Aretes ETES",
+        "stars": 4,
+        "precio": 29.00,
+        "moneda": "PEN",
+        "img":"assets/img/product/product-14.jpg"
+      }
+    ]
+  }  
+  
