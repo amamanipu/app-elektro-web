@@ -2,19 +2,19 @@
 <section class="contact spad" style="background-image: url(&quot;assets/img/backgrounds/admin-bg.jpg&quot;);">
   <div class="container">
     <div class="contact__form login-dark" >
-      <form action="#" style="background-color: rgba(0,0,0,0.1);">
+      <form [formGroup] = "loginForm" action="#" style="background-color: rgba(0,0,0,0.1);">
           <div class="row">
               <div class="col-lg-12 illustration">
                 <i class="icon ion-ios-checkmark-outline" style="color: rgba(0, 0, 0, 0.75);"></i>
               </div>
               <div class="col-lg-12">
-                  <input type="email" placeholder="Email">
+                  <input type="email" formControlName="email" placeholder="Email">
               </div>
               <div class="col-lg-12">
-                  <input type="password" placeholder="Password">
+                  <input type="password" formControlName="password" placeholder="Password">
               </div>
               <div class="col-lg-12">
-                  <button type="submit" class="site-btn">Ingresar</button>
+                  <button (click)="__onSubmit()" class="site-btn">Ingresar</button>
               </div>
           </div>
       </form>

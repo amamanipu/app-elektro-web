@@ -11,6 +11,8 @@ import { PagoComponent } from './pago/pago.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { OrdersComponent } from './orders/orders.component';
+import { LogoutComponent } from './access/login/logout.component';
+import { MyDataComponent } from './access/my-data/my-data.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: 'pago', component: PagoComponent },
   { path: 'libro-reclamaciones', component: ComplaintsComponent },
   { path: 'mis-pedidos', component: OrdersComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'my-data', component: MyDataComponent },
 ];
 
 @NgModule({

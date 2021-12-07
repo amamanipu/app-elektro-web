@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiNetFashion: 'https://localhost:44309',
+  apiAWSFashion: 'https://zy2vytaxcd.execute-api.us-east-1.amazonaws.com/v1',
 };
 
 /*

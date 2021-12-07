@@ -1,0 +1,34 @@
+<!-- Register Section Begin -->
+<section class="contact spad" style="background-image: url(&quot;assets/img/backgrounds/admin-bg.jpg&quot;);">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <div class="contact__form">
+          <form [formGroup]="userForm" method="post" action="#">
+              <div class="row">
+                  <div class="col-lg-6">
+                      <input type="text" formControlName="nombres" placeholder="Nombres" readonly>
+                  </div>
+                  <div class="col-lg-6">
+                      <input type="text" formControlName="apellidos" placeholder="Apellidos" readonly>
+                  </div>
+                  <div class="col-lg-6">
+                      <input type="text" formControlName="documentoidentidad" placeholder="Numero de Documento" readonly>
+                  </div>
+                  <div class="col-lg-6">
+                      <input type="text" formControlName="direccion" placeholder="Dirección" readonly>
+                  </div>
+                  <div class="col-lg-6">
+                    <input type="text" formControlName="celular" placeholder="Celular" readonly>
+                  </div>
+                  <div class="col-lg-6">
+                      <input type="email" formControlName="email" placeholder="Email" readonly>
+                  </div>
+              </div>
+          </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Register Section End -->
