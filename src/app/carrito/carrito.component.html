@@ -4,11 +4,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>Shopping Cart</h4>
+                    <h4>Carrito</h4>
                     <div class="breadcrumb__links">
                         <a href="./index.html">Home</a>
                         <a href="./shop.html">Shop</a>
-                        <span>Shopping Cart</span>
+                        <span>Carrito</span>
                     </div>
                 </div>
             </div>
@@ -23,37 +23,39 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="shopping__cart__table">
-                    <table>
+                    <table id="tblCarrito">
                         <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>Quantity</th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
                                 <th>Total</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let item of jsonCarrito; let i = index" [attr.data-index]="i">
                                 <td class="product__cart__item">
                                     <div class="product__cart__item__pic">
-                                        <img src="assets/img/shopping-cart/cart-1.jpg" alt="">
+                                        <img src="{{item.img}}" width="120" height="120" alt="">
                                     </div>
                                     <div class="product__cart__item__text">
-                                        <h6>T-shirt Contrast Pocket</h6>
-                                        <h5>$98.49</h5>
+                                        <h6>{{item.nombre}}</h6>
+                                        <h5>{{item.precio}} {{item.moneda}}</h5>
                                     </div>
                                 </td>
                                 <td class="quantity__item">
                                     <div class="quantity">
                                         <div class="pro-qty-2">
-                                            <input type="text" value="1">
+                                            <span class="fa fa-angle-left dec qtybtn" (click)="CambiarCantidad(i, item.idproducto, '-')"></span>
+                                                <input type="text" value="{{item.cantidad}}" id="qty{{i}}" disabled />
+                                            <span class="fa fa-angle-right inc qtybtn" (click)="CambiarCantidad(i, item.idproducto, '+')"></span>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="cart__price">$ 30.00</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
+                                <td class="cart__price">{{item.precio * item.cantidad}} {{item.moneda}}</td>
+                                <td class="cart__close"><i style="cursor:pointer" class="fa fa-close" (click)="EliminarFila(item.idproducto)"></i></td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td class="product__cart__item">
                                     <div class="product__cart__item__pic">
                                         <img src="assets/img/shopping-cart/cart-2.jpg" alt="">
@@ -72,78 +74,39 @@
                                 </td>
                                 <td class="cart__price">$ 32.50</td>
                                 <td class="cart__close"><i class="fa fa-close"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="product__cart__item">
-                                    <div class="product__cart__item__pic">
-                                        <img src="assets/img/shopping-cart/cart-3.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>Basic Flowing Scarf</h6>
-                                        <h5>$98.49</h5>
-                                    </div>
-                                </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="cart__price">$ 47.00</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="product__cart__item">
-                                    <div class="product__cart__item__pic">
-                                        <img src="assets/img/shopping-cart/cart-4.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>Basic Flowing Scarf</h6>
-                                        <h5>$98.49</h5>
-                                    </div>
-                                </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="cart__price">$ 30.00</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="#">Continue Shopping</a>
+                            <a href="#">Continua comprando</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn update__btn">
                             <a href="#"><i class="fa fa-spinner"></i> Update cart</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="cart__discount">
+                <!-- <div class="cart__discount">
                     <h6>Discount codes</h6>
                     <form action="#">
                         <input type="text" placeholder="Coupon code">
                         <button type="submit">Apply</button>
                     </form>
-                </div>
+                </div> -->
                 <div class="cart__total">
-                    <h6>Cart total</h6>
+                    <h6>TOTAL CARRITO</h6>
                     <ul>
-                        <li>Subtotal <span>$ 169.50</span></li>
-                        <li>Total <span>$ 169.50</span></li>
+                        <li>Subtotal <span>{{subtotal}} {{moneda}}</span></li>
+                        <li>IGV <span>{{tax}} {{moneda}}</span></li>
+                        <li>Total <span>{{total}} {{moneda}}</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">Proceed to checkout</a>
+                    <a href="#" class="primary-btn">Proceder a checkout</a>
                 </div>
             </div>
         </div>
