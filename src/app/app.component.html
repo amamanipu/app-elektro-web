@@ -7,12 +7,23 @@
 <div class="offcanvas-menu-overlay"></div>
 <div class="offcanvas-menu-wrapper">
   <div class="offcanvas__option">
-      <div class="offcanvas__top__hover">
+      <div *ngIf="token != null" class="offcanvas__top__hover">
+        <span>Bienvenido: {{ user }} </span>
+      </div>
+      <div *ngIf="token == null" class="offcanvas__top__hover">
         <span>Accesos <i class="arrow_carrot-down"></i></span>
         <ul>
-            <li><a routerLink="login" style="color: #000;">Iniciar Sesión</a></li>
-            <li><a routerLink="register" style="color: #000;">Registrarse</a></li>
-            <li><a routerLink="changepassword"  style="color: #000;">Cambiar Contraseña</a></li>
+            <li><a routerLink="login" style="text-decoration: none;">Iniciar Sesión</a></li>
+            <li><a routerLink="register" style="text-decoration: none;">Registrarse</a></li>
+            <li><a routerLink="changepassword"  style="text-decoration: none;">Cambiar Contraseña</a></li>
+        </ul>
+      </div>
+      <div *ngIf="token != null" class="offcanvas__top__hover">
+        <span> <i class="arrow_carrot-down"></i></span>
+        <ul>
+            <li><a routerLink="my-data" style="text-decoration: none;">Mis Datos</a></li>
+            <li><a routerLink="changepassword" style="text-decoration: none;">Cambiar Contraseña</a></li>
+            <li><a routerLink="logout" style="text-decoration: none;">Cerrar Sesión</a></li>
         </ul>
       </div>
   </div>

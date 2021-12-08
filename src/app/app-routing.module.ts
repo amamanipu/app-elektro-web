@@ -13,6 +13,9 @@ import { ComplaintsComponent } from './complaints/complaints.component';
 import { OrdersComponent } from './orders/orders.component';
 import { LogoutComponent } from './access/login/logout.component';
 import { MyDataComponent } from './access/my-data/my-data.component';
+import { CategoryComponent } from './maintenance/category/category.component';
+import { BrandComponent } from './maintenance/brand/brand.component';
+import { SizeComponent } from './maintenance/size/size.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,6 +32,9 @@ const routes: Routes = [
   { path: 'mis-pedidos', component: OrdersComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'my-data', component: MyDataComponent },
+  { path: 'maintenance/category', component: CategoryComponent },
+  { path: 'maintenance/brand', component: BrandComponent },
+  { path: 'maintenance/size', component: SizeComponent },
 ];
 
 @NgModule({

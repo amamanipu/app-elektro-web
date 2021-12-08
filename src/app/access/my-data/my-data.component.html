@@ -7,22 +7,28 @@
           <form [formGroup]="userForm" method="post" action="#">
               <div class="row">
                   <div class="col-lg-6">
-                      <input type="text" formControlName="nombres" placeholder="Nombres" readonly>
+                    <label for="nombres">Nombres: </label>
+                    <input type="text" id="nombres" formControlName="nombres" placeholder="Nombres" readonly>
                   </div>
                   <div class="col-lg-6">
-                      <input type="text" formControlName="apellidos" placeholder="Apellidos" readonly>
+                    <label for="apellidos">Apellidos: </label>
+                    <input type="text" id="apellidos" formControlName="apellidos" placeholder="Apellidos" readonly>
                   </div>
                   <div class="col-lg-6">
-                      <input type="text" formControlName="documentoidentidad" placeholder="Numero de Documento" readonly>
+                    <label for="documentoidentidad">DNI: </label>
+                    <input type="text" id="documentoidentidad" formControlName="documentoidentidad" placeholder="Numero de Documento" readonly>
                   </div>
                   <div class="col-lg-6">
-                      <input type="text" formControlName="direccion" placeholder="Dirección" readonly>
+                    <label for="direccion">Dirección: </label>
+                    <input type="text" id="direccion" formControlName="direccion" placeholder="Dirección" readonly>
                   </div>
                   <div class="col-lg-6">
-                    <input type="text" formControlName="celular" placeholder="Celular" readonly>
+                    <label for="celular">Celular: </label>
+                    <input type="text" id="celular" formControlName="celular" placeholder="Celular" readonly>
                   </div>
                   <div class="col-lg-6">
-                      <input type="email" formControlName="email" placeholder="Email" readonly>
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" formControlName="email" placeholder="Email" readonly>
                   </div>
               </div>
           </form>

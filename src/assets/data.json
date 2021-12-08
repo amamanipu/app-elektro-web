@@ -93,7 +93,7 @@
       },
       {
         "id": 5,
-        "nombre": "Admin",
+        "nombre": "Mantenimiento",
         "id_menu_padre": null,
         "orden": 5,
         "icon": "id5.png",
@@ -102,11 +102,41 @@
         "submenu": [
           {
             "id": 11,
-            "nombre": "Producto",
+            "nombre": "Productos",
             "id_menu_padre": 5,
             "orden": 1,
             "icon": "id5.png",
             "routerLink": "maintenance/product",
+            "estado": 1,
+            "submenu": null
+          },
+          {
+            "id": 12,
+            "nombre": "Categorias",
+            "id_menu_padre": 5,
+            "orden": 2,
+            "icon": "id5.png",
+            "routerLink": "maintenance/category",
+            "estado": 1,
+            "submenu": null
+          },
+          {
+            "id": 12,
+            "nombre": "Marcas",
+            "id_menu_padre": 5,
+            "orden": 3,
+            "icon": "id5.png",
+            "routerLink": "maintenance/brand",
+            "estado": 1,
+            "submenu": null
+          },
+          {
+            "id": 12,
+            "nombre": "Tallas de Producto",
+            "id_menu_padre": 5,
+            "orden": 4,
+            "icon": "id5.png",
+            "routerLink": "maintenance/size",
             "estado": 1,
             "submenu": null
           }

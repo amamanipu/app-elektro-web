@@ -3849,10 +3849,11 @@ ol {
 }
 
 .nice-select {
-  width: 100%;
-  height: 50px;
-  margin-bottom: 30px;
-  padding-left: 20px;
-  font-size: 15px;
-  color: #4d4d4d;
+  display: none;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  outline: none;
+  color: #007bff;
 }

@@ -1,0 +1,59 @@
+<!-- Register Section Begin -->
+<section class="contact spad" style="background-image: url(&quot;assets/img/backgrounds/admin-bg.jpg&quot;);">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <div class="contact__form">
+          <form [formGroup] = "sizeForm" action="#">
+              <div class="row">
+                  <div class="col-lg-12">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="pills-list-size-tab" data-toggle="pill" href="#pills-list-size" role="tab" aria-controls="pills-list-size" aria-selected="true" (click)="__be_get_tabla_general()">Tallas</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-new-size-tab" data-toggle="pill" href="#pills-new-size" role="tab" aria-controls="pills-new-size" aria-selected="false">Nuevo</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-list-size" role="tabpanel" aria-labelledby="pills-list-size-tab">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let el of elements">
+                                  <th scope="row">{{el.id_tamano}}</th>
+                                  <td>{{el.descripcion}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-new-size" role="tabpanel" aria-labelledby="pills-new-size-tab">
+                        <!--SIZE-->
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <label for="descripcion">Talla: </label>
+                            <input type="text" id="descripcion" formControlName="descripcion" placeholder="Ingresar Talla">
+                          </div>
+                          <div class="col-lg-12">
+                              <button (click)="__onSubmit()" class="site-btn">Registrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Register Section End -->

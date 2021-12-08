@@ -19,6 +19,9 @@ import { PagoComponent } from './pago/pago.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { OrdersComponent } from './orders/orders.component';
 import { MyDataComponent } from './access/my-data/my-data.component';
+import { CategoryComponent } from './maintenance/category/category.component';
+import { BrandComponent } from './maintenance/brand/brand.component';
+import { SizeComponent } from './maintenance/size/size.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { MyDataComponent } from './access/my-data/my-data.component';
     PagoComponent,
     ComplaintsComponent,
     OrdersComponent,
-    MyDataComponent
+    MyDataComponent,
+    CategoryComponent,
+    BrandComponent,
+    SizeComponent
   ],
   imports: [
     BrowserModule,

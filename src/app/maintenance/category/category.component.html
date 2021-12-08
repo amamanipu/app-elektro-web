@@ -1,0 +1,59 @@
+<!-- Register Section Begin -->
+<section class="contact spad" style="background-image: url(&quot;assets/img/backgrounds/admin-bg.jpg&quot;);">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <div class="contact__form">
+          <form [formGroup] = "categoryForm" action="#">
+              <div class="row">
+                  <div class="col-lg-12">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="pills-list-category-tab" data-toggle="pill" href="#pills-list-category" role="tab" aria-controls="pills-list-category" aria-selected="true" (click)="__be_get_tabla_general()">Categorias</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-new-category-tab" data-toggle="pill" href="#pills-new-category" role="tab" aria-controls="pills-new-category" aria-selected="false">Nuevo</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-list-category" role="tabpanel" aria-labelledby="pills-list-category-tab">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let el of elements">
+                                  <th scope="row">{{el.id_categoria}}</th>
+                                  <td>{{el.descripcion}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-new-category" role="tabpanel" aria-labelledby="pills-new-category-tab">
+                        <!--CATEGORIA-->
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <label for="descripcion">Categoria: </label>
+                            <input type="text" id="descripcion" formControlName="descripcion" placeholder="Ingresar categoria">
+                          </div>
+                          <div class="col-lg-12">
+                              <button (click)="__onSubmit()" class="site-btn">Registrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Register Section End -->
