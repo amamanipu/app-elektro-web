@@ -11,6 +11,9 @@ import { HttpClient } from "@angular/common/http";
 
 export class AppComponent {
 
+  token = sessionStorage.getItem("token");
+  user = sessionStorage.getItem("user");
+
   stringJson: any;
   stringObject: any;
   dataMenu: any;
@@ -39,9 +42,9 @@ export class AppComponent {
         this.dataMenu = this.stringObject.menu;
         this.CrearMenu();
       });
-    
+
   }
-  
+
   CrearMenu() {
     this.htmlMenu = this.MenuRecursivo(this.dataMenu);
   }
@@ -64,5 +67,5 @@ export class AppComponent {
     return html;
   }
 
-  
+
 }

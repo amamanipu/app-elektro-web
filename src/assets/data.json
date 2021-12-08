@@ -106,13 +106,13 @@
             "id_menu_padre": 5,
             "orden": 1,
             "icon": "id5.png",
-            "routerLink": "product",
+            "routerLink": "maintenance/product",
             "estado": 1,
             "submenu": null
           }
         ]
       }
-      
+
     ],
 
     "filters":[
@@ -360,5 +360,4 @@
         "img":"assets/img/product/product-14.jpg"
       }
     ]
-  }  
-  
+  }

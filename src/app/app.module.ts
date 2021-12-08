@@ -18,6 +18,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { PagoComponent } from './pago/pago.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { OrdersComponent } from './orders/orders.component';
+import { MyDataComponent } from './access/my-data/my-data.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { OrdersComponent } from './orders/orders.component';
     CarritoComponent,
     PagoComponent,
     ComplaintsComponent,
-    OrdersComponent
+    OrdersComponent,
+    MyDataComponent
   ],
   imports: [
     BrowserModule,

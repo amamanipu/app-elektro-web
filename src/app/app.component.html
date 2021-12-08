@@ -35,14 +35,24 @@
               </div>
               <div class="col-lg-6 col-md-5">
                   <div class="header__top__right">
-                      <div class="header__top__hover">
-                        <span>Accesos <i class="arrow_carrot-down"></i></span>
-                        <ul>
-                            <li><a routerLink="login" style="color: #000;">Iniciar Sesión</a></li>
-                            <li><a routerLink="register" style="color: #000;">Registrarse</a></li>
-                            <li><a routerLink="changepassword" style="color: #000;">Cambiar Contraseña</a></li>
-                        </ul>
-                      </div>
+                    <div *ngIf="token != null" class="header__top__hover">
+                      <span>Bienvenido: {{ user }} </span>
+                    </div>
+                    <div *ngIf="token == null" class="header__top__hover">
+                      <span>Accesos <i class="arrow_carrot-down"></i></span>
+                      <ul>
+                          <li><a routerLink="login" style="color: #000;">Iniciar Sesión</a></li>
+                          <li><a routerLink="register" style="color: #000;">Registrarse</a></li>
+                      </ul>
+                    </div>
+                    <div *ngIf="token != null" class="header__top__hover">
+                      <span> <i class="arrow_carrot-down"></i></span>
+                      <ul>
+                          <li><a routerLink="my-data" style="color: #000;">Mis Datos</a></li>
+                          <li><a routerLink="changepassword" style="color: #000;">Cambiar Contraseña</a></li>
+                          <li><a routerLink="logout" style="color: #000;">Cerrar Sesión</a></li>
+                      </ul>
+                    </div>
                   </div>
               </div>
           </div>
