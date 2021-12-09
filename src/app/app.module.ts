@@ -22,6 +22,7 @@ import { MyDataComponent } from './access/my-data/my-data.component';
 import { CategoryComponent } from './maintenance/category/category.component';
 import { BrandComponent } from './maintenance/brand/brand.component';
 import { SizeComponent } from './maintenance/size/size.component';
+import { UserComponent } from './setting/user/user.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { SizeComponent } from './maintenance/size/size.component';
     MyDataComponent,
     CategoryComponent,
     BrandComponent,
-    SizeComponent
+    SizeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

@@ -26,4 +26,8 @@ export class UserService {
   __be_get_user(headers: any, params: any) {
     return this.http.get(`${environment.apiNetFashion}/api/user/getuser`, { headers, params });
   }
+
+  __be_get_users(headers: any) {
+    return this.http.get(`${environment.apiNetFashion}/api/user/getusers`, { headers });
+  }
 }

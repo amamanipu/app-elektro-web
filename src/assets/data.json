@@ -8,7 +8,15 @@
         "icon": "id1.png",
         "routerLink": "tienda",
         "estado": 1,
-        "submenu": null
+        "submenu": null,
+        "perfiles": [
+          {
+            "id_perfil" : 0
+          },
+          {
+            "id_perfil" : 3
+          }
+        ]
       },
       {
         "id": 2,
@@ -69,17 +77,15 @@
             "estado": 1,
             "submenu": null
           }
+        ],
+        "perfiles": [
+          {
+            "id_perfil" : 0
+          },
+          {
+            "id_perfil" : 3
+          }
         ]
-      },
-      {
-        "id": 3,
-        "nombre": "Blog",
-        "id_menu_padre": null,
-        "orden": 3,
-        "icon": "id3.png",
-        "routerLink": "blog",
-        "estado": 1,
-        "submenu": null
       },
       {
         "id": 4,
@@ -89,10 +95,33 @@
         "icon": "id4.png",
         "routerLink": "contact",
         "estado": 1,
-        "submenu": null
+        "submenu": null,
+        "perfiles": [
+          {
+            "id_perfil" : 0
+          },
+          {
+            "id_perfil" : 3
+          }
+        ]
       },
       {
         "id": 5,
+        "nombre": "Mis Pedidos",
+        "id_menu_padre": null,
+        "orden": 4,
+        "icon": "id4.png",
+        "routerLink": "myOrders",
+        "estado": 1,
+        "submenu": null,
+        "perfiles": [
+          {
+            "id_perfil" : 3
+          }
+        ]
+      },
+      {
+        "id": 6,
         "nombre": "Mantenimiento",
         "id_menu_padre": null,
         "orden": 5,
@@ -140,9 +169,42 @@
             "estado": 1,
             "submenu": null
           }
+        ],
+        "perfiles": [
+          {
+            "id_perfil" : 1
+          },
+          {
+            "id_perfil" : 2
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "nombre": "Configuración",
+        "id_menu_padre": null,
+        "orden": 5,
+        "icon": "id5.png",
+        "routerLink": "",
+        "estado": 1,
+        "submenu": [
+          {
+            "id": 11,
+            "nombre": "Usuarios",
+            "id_menu_padre": 5,
+            "orden": 1,
+            "icon": "id5.png",
+            "routerLink": "setting/user",
+            "estado": 1,
+            "submenu": null
+          }
+        ],
+        "perfiles": [
+          {
+            "id_perfil" : 1
+          }
         ]
       }
-
     ],
 
     "filters":[

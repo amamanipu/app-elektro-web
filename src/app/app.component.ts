@@ -13,6 +13,7 @@ export class AppComponent {
 
   token = sessionStorage.getItem("token");
   user = sessionStorage.getItem("user");
+  id_perfil = sessionStorage.getItem("id_perfil") || 0;
 
   stringJson: any;
   stringObject: any;
@@ -39,6 +40,14 @@ export class AppComponent {
       this.httpClient.get("assets/data.json").subscribe(res =>{
         this.stringJson = JSON.stringify(res);
         this.stringObject = JSON.parse(this.stringJson);
+        const stringObjectMenu =  this.stringObject.menu.filter((element: any ) => {
+          const result = element.perfiles.some((perfil: any) => perfil.id_perfil == this.id_perfil);
+          if(result){
+            return element;
+          }
+        });
+        this.stringObject.menu = stringObjectMenu
+        console.log(stringObjectMenu);
         this.dataMenu = this.stringObject.menu;
         this.CrearMenu();
       });

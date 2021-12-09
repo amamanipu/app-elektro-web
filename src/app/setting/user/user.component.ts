@@ -4,22 +4,26 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class UserComponent implements OnInit {
+
+  elements: any = [];
+  headElements = ['ID', 'NOMBRES', 'APELLIDOS', 'DNI', 'CELULAR', 'EMAIL'];
+
   userForm = this.fb.group({
     email: ["", [Validators.required, Validators.email]],
     password: ["", Validators.required],
     passwordrepeat: ["", Validators.required],
-    id_perfil: 3, //Perfil Cliente
+    id_perfil: 2, //Perfil Supervisor
     nombres: ["", Validators.required],
     apellidos: ["", Validators.required],
     documentoidentidad: ["", [Validators.required, Validators.maxLength(8)]],
-    direccion: ["", Validators.required],
+    direccion: [""],
     celular: ["", [Validators.required, Validators.maxLength(9)]],
-  })
+  });
 
   constructor(
     private fb: FormBuilder,
@@ -28,10 +32,28 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   __insert(data: any) {
-    this.us.__be_insert_client(data).subscribe((rest: any) => {
+    const token = sessionStorage.getItem("token");
+    const header = { Authorization: "Bearer " + token };
+
+    this.us.__be_insert(data, header).subscribe((rest: any) => {
       if(rest.issuccess) {
         alert("Usuario creado con ID: " + rest.data.id + " Nombre: " + rest.data.nombre);
-        this.router.navigate(['login']);
+        this.router.navigate(['home']);
+      }
+      else
+      {
+        alert(rest.errormessage);
+      }
+    })
+  }
+
+  __be_get_users() {
+    const token = sessionStorage.getItem("token");
+    const header = { Authorization: "Bearer " + token };
+
+    this.us.__be_get_users(header).subscribe((rest: any) => {
+      if(rest.issuccess) {
+        this.elements = rest.data
       }
       else
       {
@@ -56,6 +78,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.__be_get_users();
   }
 
 }

@@ -27,6 +27,8 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem("token", rest.data.token);
         sessionStorage.setItem("user", rest.data.nombres + " " + rest.data.apellidos);
         sessionStorage.setItem("id_usuario", rest.data.id_usuario);
+        sessionStorage.setItem("id_perfil", rest.data.id_perfil || 0);
+        sessionStorage.setItem("password", rest.data.password);
 
         this.router.navigateByUrl('/home', { skipLocationChange: false }).then(() => {
           this.router.navigate(['home']);

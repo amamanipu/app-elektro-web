@@ -16,6 +16,7 @@ import { MyDataComponent } from './access/my-data/my-data.component';
 import { CategoryComponent } from './maintenance/category/category.component';
 import { BrandComponent } from './maintenance/brand/brand.component';
 import { SizeComponent } from './maintenance/size/size.component';
+import { UserComponent } from './setting/user/user.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'maintenance/category', component: CategoryComponent },
   { path: 'maintenance/brand', component: BrandComponent },
   { path: 'maintenance/size', component: SizeComponent },
+  { path: 'setting/user', component: UserComponent },
 ];
 
 @NgModule({
