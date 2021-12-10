@@ -90,11 +90,11 @@
                             <div class="checkout__order__products">Producto <span>Total</span></div>
                             <ul class="checkout__total__products">
                                 <li *ngFor="let item of jsonCarrito; let i = index" [attr.data-index]="i">
-                                    01. {{item.nombre}} ({{item.cantidad}}) <span>{{item.cantidad * item.precio}} {{item.moneda}}</span>
+                                    {{i + 1}}. {{item.nombre}} ({{item.cantidad}}) <span>{{item.cantidad * item.precio}} {{item.moneda}}</span>
                                 </li>
                             </ul>
                             <ul class="checkout__total__all">
-                                <li>[Subtotal] <span>{{subtotal}} {{moneda}}</span></li>
+                                <li>Subtotal <span>{{subtotal}} {{moneda}}</span></li>
                                 <li>IGV <span>{{tax}} {{moneda}}</span></li>
                                 <li>Total <span>{{total}} {{moneda}}</span></li>
                             </ul>
@@ -121,7 +121,10 @@
                                     <span class="checkmark"></span>
                                 </label>
                             </div> -->
-                            <button type="submit" class="site-btn">REALIZAR PEDIDO</button>
+                            <div *ngIf="jsonCarrito.length > 0">
+                                <button type="submit" class="site-btn">REALIZAR PEDIDO</button>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
