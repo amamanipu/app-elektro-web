@@ -71,7 +71,9 @@ export class TiendaComponent implements OnInit {
   
   }
 
-  
+  ProductoDetalle(pid: number){
+    this.router.navigate(['/product-detail', pid]); 
+  }
 
   AnadirItem(id: number){
     //alert(id);

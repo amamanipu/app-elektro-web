@@ -89,15 +89,14 @@
                             <h4 class="order__title">Detalle del Pedido</h4>
                             <div class="checkout__order__products">Producto <span>Total</span></div>
                             <ul class="checkout__total__products">
-                                <li>01. Vanilla salted caramel <span>$ 300.0</span></li>
-                                <li>02. German chocolate <span>$ 170.0</span></li>
-                                <li>03. Sweet autumn <span>$ 170.0</span></li>
-                                <li>04. Cluten free mini dozen <span>$ 110.0</span></li>
+                                <li *ngFor="let item of jsonCarrito; let i = index" [attr.data-index]="i">
+                                    01. {{item.nombre}} ({{item.cantidad}}) <span>{{item.cantidad * item.precio}} {{item.moneda}}</span>
+                                </li>
                             </ul>
                             <ul class="checkout__total__all">
-                                <li>Subtotal <span>$750.99</span></li>
-                                <li>IGV <span>$150.99</span></li>
-                                <li>Total <span>$850.99</span></li>
+                                <li>[Subtotal] <span>{{subtotal}} {{moneda}}</span></li>
+                                <li>IGV <span>{{tax}} {{moneda}}</span></li>
+                                <li>Total <span>{{total}} {{moneda}}</span></li>
                             </ul>
                             <!-- <div class="checkout__input__checkbox">
                                 <label for="acc-or">

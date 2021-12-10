@@ -18,12 +18,13 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { PagoComponent } from './pago/pago.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { OrdersComponent } from './orders/orders.component';
+
 import { MyDataComponent } from './access/my-data/my-data.component';
 import { CategoryComponent } from './maintenance/category/category.component';
 import { BrandComponent } from './maintenance/brand/brand.component';
 import { SizeComponent } from './maintenance/size/size.component';
 import { UserComponent } from './setting/user/user.component';
-
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { UserComponent } from './setting/user/user.component';
     CategoryComponent,
     BrandComponent,
     SizeComponent,
-    UserComponent
+    UserComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

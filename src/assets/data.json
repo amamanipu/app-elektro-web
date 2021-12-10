@@ -20,33 +20,13 @@
       },
       {
         "id": 2,
-        "nombre": "Páginas",
+        "nombre": "Compras",
         "id_menu_padre": null,
         "orden": 2,
         "icon": "id2.png",
         "routerLink": "",
         "estado": 1,
         "submenu": [
-          {
-            "id": 6,
-            "nombre": "Nosotros",
-            "id_menu_padre": 2,
-            "orden": 1,
-            "icon": "id5.png",
-            "routerLink": "about",
-            "estado": 1,
-            "submenu": null
-          },
-          {
-            "id": 7,
-            "nombre": "Detalle",
-            "id_menu_padre": 2,
-            "orden": 2,
-            "icon": "id5.png",
-            "routerLink": "shop-details",
-            "estado": 1,
-            "submenu": null
-          },
           {
             "id": 8,
             "nombre": "Carrito",
@@ -64,16 +44,6 @@
             "orden": 4,
             "icon": "id5.png",
             "routerLink": "pago",
-            "estado": 1,
-            "submenu": null
-          },
-          {
-            "id": 10,
-            "nombre": "Blog Details",
-            "id_menu_padre": 2,
-            "orden": 5,
-            "icon": "id5.png",
-            "routerLink": "blog-details",
             "estado": 1,
             "submenu": null
           }
@@ -361,7 +331,21 @@
         "stars": 4,
         "precio": 159.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-2.jpg"
+        "img":"assets/img/product/product-2.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-2.jpg"
+          },
+          {
+            "img":"assets/img/product/product-2.jpg"
+          },
+          {
+            "img":"assets/img/product/product-2.jpg"
+          },
+          {
+            "img":"assets/img/product/product-2.jpg"
+          }
+        ]
       },
       {
         "id":2,
@@ -369,7 +353,21 @@
         "stars": 4,
         "precio": 139.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-3.jpg"
+        "img":"assets/img/product/product-3.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-3.jpg"
+          },
+          {
+            "img":"assets/img/product/product-3.jpg"
+          },
+          {
+            "img":"assets/img/product/product-3.jpg"
+          },
+          {
+            "img":"assets/img/product/product-3.jpg"
+          }
+        ]
       },
       {
         "id":3,
@@ -377,7 +375,21 @@
         "stars": 4,
         "precio": 169.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-4.jpg"
+        "img":"assets/img/product/product-4.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-4.jpg"
+          },
+          {
+            "img":"assets/img/product/product-4.jpg"
+          },
+          {
+            "img":"assets/img/product/product-4.jpg"
+          },
+          {
+            "img":"assets/img/product/product-4.jpg"
+          }
+        ]
       },
       {
         "id":4,
@@ -385,7 +397,21 @@
         "stars": 4,
         "precio": 39.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-6.jpg"
+        "img":"assets/img/product/product-6.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-6.jpg"
+          },
+          {
+            "img":"assets/img/product/product-6.jpg"
+          },
+          {
+            "img":"assets/img/product/product-6.jpg"
+          },
+          {
+            "img":"assets/img/product/product-6.jpg"
+          }
+        ]
       },
       {
         "id":5,
@@ -393,7 +419,21 @@
         "stars": 4,
         "precio": 69.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-7.jpg"
+        "img":"assets/img/product/product-7.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-7.jpg"
+          },
+          {
+            "img":"assets/img/product/product-7.jpg"
+          },
+          {
+            "img":"assets/img/product/product-7.jpg"
+          },
+          {
+            "img":"assets/img/product/product-7.jpg"
+          }
+        ]
       },
       {
         "id":6,
@@ -401,7 +441,21 @@
         "stars": 4,
         "precio": 59.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-8.jpg"
+        "img":"assets/img/product/product-8.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-8.jpg"
+          },
+          {
+            "img":"assets/img/product/product-8.jpg"
+          },
+          {
+            "img":"assets/img/product/product-8.jpg"
+          },
+          {
+            "img":"assets/img/product/product-8.jpg"
+          }
+        ]
       },
       {
         "id":7,
@@ -409,7 +463,21 @@
         "stars": 4,
         "precio": 49.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-9.jpg"
+        "img":"assets/img/product/product-9.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-9.jpg"
+          },
+          {
+            "img":"assets/img/product/product-9.jpg"
+          },
+          {
+            "img":"assets/img/product/product-9.jpg"
+          },
+          {
+            "img":"assets/img/product/product-9.jpg"
+          }
+        ]
       },
       {
         "id":8,
@@ -417,7 +485,21 @@
         "stars": 4,
         "precio": 89.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-10.jpg"
+        "img":"assets/img/product/product-10.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-10.jpg"
+          },
+          {
+            "img":"assets/img/product/product-10.jpg"
+          },
+          {
+            "img":"assets/img/product/product-10.jpg"
+          },
+          {
+            "img":"assets/img/product/product-10.jpg"
+          }
+        ]
       },
       {
         "id":9,
@@ -425,7 +507,21 @@
         "stars": 4,
         "precio": 69.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-11.jpg"
+        "img":"assets/img/product/product-11.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-11.jpg"
+          },
+          {
+            "img":"assets/img/product/product-11.jpg"
+          },
+          {
+            "img":"assets/img/product/product-11.jpg"
+          },
+          {
+            "img":"assets/img/product/product-11.jpg"
+          }
+        ]
       },
       {
         "id":10,
@@ -433,7 +529,21 @@
         "stars": 4,
         "precio": 79.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-12.jpg"
+        "img":"assets/img/product/product-12.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-12.jpg"
+          },
+          {
+            "img":"assets/img/product/product-12.jpg"
+          },
+          {
+            "img":"assets/img/product/product-12.jpg"
+          },
+          {
+            "img":"assets/img/product/product-12.jpg"
+          }
+        ]
       },
       {
         "id":11,
@@ -441,7 +551,21 @@
         "stars": 4,
         "precio": 99.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-13.jpg"
+        "img":"assets/img/product/product-13.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-13.jpg"
+          },
+          {
+            "img":"assets/img/product/product-13.jpg"
+          },
+          {
+            "img":"assets/img/product/product-13.jpg"
+          },
+          {
+            "img":"assets/img/product/product-13.jpg"
+          }
+        ]
       },
       {
         "id":12,
@@ -449,7 +573,21 @@
         "stars": 4,
         "precio": 29.00,
         "moneda": "PEN",
-        "img":"assets/img/product/product-14.jpg"
+        "img":"assets/img/product/product-14.jpg",
+        "imgs": [
+          {
+            "img":"assets/img/product/product-14.jpg"
+          },
+          {
+            "img":"assets/img/product/product-14.jpg"
+          },
+          {
+            "img":"assets/img/product/product-14.jpg"
+          },
+          {
+            "img":"assets/img/product/product-14.jpg"
+          }
+        ]
       }
     ]
   }
