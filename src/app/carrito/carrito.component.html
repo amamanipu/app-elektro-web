@@ -106,7 +106,10 @@
                         <li>IGV <span>{{tax}} {{moneda}}</span></li>
                         <li>Total <span>{{total}} {{moneda}}</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">Proceder a checkout</a>
+                    <div *ngIf="jsonCarrito.length > 0">
+                        <a style="cursor: pointer; color: white;" href="/pago" class="primary-btn">Proceder a checkout</a>
+                    </div>
+                    
                 </div>
             </div>
         </div>
