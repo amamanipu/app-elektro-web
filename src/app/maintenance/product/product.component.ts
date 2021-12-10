@@ -176,7 +176,7 @@ export class ProductComponent implements OnInit {
           element.stock = parseInt(element.stock);
           element.imagenes.forEach((imagen: any) => {
             imagen.nombre=this.fileName;
-            imagen.ruta=`C:\\Fashion21\\productos\\${this.fileName}`; //Ruta del Servidor
+            imagen.ruta=`https://localhost:44309/Resources/Images/${this.fileName}`; //Ruta del Servidor
             imagen.tipo=this.fileType;
           });
         });

@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
 import { Carrito } from '../beans/carrito';
 import { GeneralService } from '../services/general.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-tienda',
@@ -25,11 +26,13 @@ export class TiendaComponent implements OnInit {
   elementsCategoria: any = [];
   elementsMarca: any = [];
   elementsTamano: any = [];
+  elementsProducto: any = [];
 
   constructor(
     private router: Router,
     private httpClient: HttpClient,
-    private gs: GeneralService
+    private gs: GeneralService,
+    private readonly ps: ProductService,
   ) { }
 
   __be_get_tabla_general(code: any) {
@@ -64,6 +67,15 @@ export class TiendaComponent implements OnInit {
           default:
             break;
         }
+      }
+    })
+  }
+
+  __be_get_products() {
+    this.elementsProducto = [];
+    this.ps.__be_get_products().subscribe((rest: any) => {
+      if (rest.issuccess) {
+        this.elementsProducto = rest.data;
       }
     })
   }
@@ -112,6 +124,7 @@ export class TiendaComponent implements OnInit {
       //console.log(this.dataProducto);
     });
 
+    this.__be_get_products();
     this.__be_get_tabla_general('CATEGORIA');
     this.__be_get_tabla_general('MARCA');
     this.__be_get_tabla_general('TAMANO');
