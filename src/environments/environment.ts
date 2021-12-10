@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  apiMailFashion: 'https://avanti.pe/produce/INSFIN/public/api/email',
   apiNetFashion: 'https://localhost:44309',
   apiAWSFashion: 'https://zy2vytaxcd.execute-api.us-east-1.amazonaws.com/v1',
 };

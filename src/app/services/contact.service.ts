@@ -16,4 +16,9 @@ export class ContactService {
     return this.http.post<any>(`${environment.apiNetFashion}/api/contact/insert`, data);
   }
 
+  __be_send_contact(data: any) {
+    
+    return this.http.post<any>(`${environment.apiMailFashion}`, data);
+  }
+
 }

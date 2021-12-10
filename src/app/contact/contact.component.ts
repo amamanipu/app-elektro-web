@@ -27,9 +27,22 @@ export class ContactComponent implements OnInit {
 
   __insert(data: any) {
     this.us.__be_insert_contact(data).subscribe((rest: any) => {
+      
       if(rest.issuccess) {
-        alert("Mensaje enviado. Nos pondremos en contacto pronto contigo " + rest.data.nombre);
-        this.router.navigate(['login']);
+        //alert("Mensaje enviado. Nos pondremos en contacto pronto contigo " + rest.data.nombre);
+       
+        this.us.__be_send_contact(data).subscribe((_rest: any) => {
+      
+          if(_rest.data.resultado) {
+            alert("Mensaje enviado. Nos pondremos en contacto pronto contigo " + _rest.data.nombre);
+            this.router.navigate(['/']);
+          }
+          else
+          {
+            alert(_rest.errormessage);
+          }
+        })
+        
       }
       else
       {
