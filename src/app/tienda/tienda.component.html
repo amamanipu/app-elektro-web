@@ -6,7 +6,7 @@
                 <div class="breadcrumb__text">
                     <h4>Tienda</h4>
                     <div class="breadcrumb__links">
-                        <a href="./index.html">Home</a>
+                        <a href="./index.html">Inicio</a>
                         <span>Tienda</span>
                     </div>
                 </div>
@@ -22,16 +22,16 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="shop__sidebar">
-                    <div class="shop__sidebar__search">
+                    <!-- <div class="shop__sidebar__search">
                         <form action="#">
                             <input type="text" placeholder="Buscar...">
                             <button type="submit"><span class="icon_search"></span></button>
                         </form>
-                    </div>
+                    </div> -->
                     <div class="shop__sidebar__accordion">
                         <div class="accordion" id="accordionExample">
-                            
-                            <div *ngIf="dataFilterCat != null">
+
+                            <div *ngIf="elementsCategoria != null">
                                 <div class="card">
                                     <div class="card-heading">
                                         <a data-toggle="collapse" data-target="#collapseOne">Categorias</a>
@@ -40,8 +40,8 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li *ngFor="let item of dataFilterCat">
-                                                        <a href="#">{{item.nombre}} ({{item.cantidad}})</a>
+                                                    <li *ngFor="let item of elementsCategoria">
+                                                        <a href="#">{{item.descripcion}}</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -49,7 +49,27 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
+                            <div *ngIf="elementsMarca != null">
+                              <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseTwo">Marcas</a>
+                                </div>
+                                <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__brand">
+                                              <ul class="nice-scroll">
+                                                <li *ngFor="let item of elementsMarca">
+                                                    <a href="#">{{item.descripcion}}</a>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div *ngIf="dataFilterPrice != null">
                                 <div class="card">
                                     <div class="card-heading">
@@ -68,8 +88,8 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div *ngIf="dataFilterSize != null">
+
+                            <div *ngIf="elementsTamano != null">
                                 <div class="card">
                                     <div class="card-heading">
                                         <a data-toggle="collapse" data-target="#collapseFour">Size</a>
@@ -77,9 +97,9 @@
                                     <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__size">
-                                                <span *ngFor="let item of dataFilterSize">
-                                                    <label for="{{item.tag}}">{{item.tag}}
-                                                        <input type="radio" id="{{item.tag}}">
+                                                <span *ngFor="let item of elementsTamano">
+                                                    <label for="{{item.descripcion}}">{{item.descripcion}}
+                                                        <input type="radio" id="{{item.descripcion}}">
                                                     </label>
                                                 </span>
                                             </div>
@@ -87,7 +107,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div *ngIf="dataFilterColor != null">
                                 <div class="card">
                                     <div class="card-heading">
@@ -106,7 +126,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
 
                         </div>
                     </div>
@@ -132,30 +152,30 @@
                         </div> -->
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let item of dataProducto">
                         <div class="product__item sale">
                             <div class="product__item__pic set-bg" style="cursor:pointer" (click)="ProductoDetalle(item.id)" [ngStyle]="{'background-image': 'url(' + item.img + ')'}">
-                                
+
                                 <ul class="product__hover">
                                     <!-- <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li> -->
                                     <!-- <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li> -->
-                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
+                                    <!-- <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li> -->
                                 </ul>
                             </div>
                             <div class="product__item__text">
                                 <h6>{{item.nombre}}</h6>
                                 <a  style="cursor: pointer;" (click)="AnadirItem(item.id)" class="add-cart">+ Añadir al Carrito</a>
-                                <div class="rating">
+                                <!-- <div class="rating">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
-                                </div>
+                                </div> -->
                                 <h5>{{item.precio}} {{item.moneda}}</h5>
-                                <div class="product__color__select">
+                                <!-- <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
                                     </label>
@@ -165,7 +185,7 @@
                                     <label class="grey" for="pc-6">
                                         <input type="radio" id="pc-6">
                                     </label>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
