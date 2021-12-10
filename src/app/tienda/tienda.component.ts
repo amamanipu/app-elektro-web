@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
 import { Carrito } from '../beans/carrito';
+import { GeneralService } from '../services/general.service';
 
 @Component({
   selector: 'app-tienda',
@@ -21,8 +22,50 @@ export class TiendaComponent implements OnInit {
   lstCarrito: Carrito[] = [];
   jsonCarrito: any;
 
-  constructor(private router: Router, private httpClient: HttpClient) {
+  elementsCategoria: any = [];
+  elementsMarca: any = [];
+  elementsTamano: any = [];
 
+  constructor(
+    private router: Router,
+    private httpClient: HttpClient,
+    private gs: GeneralService
+  ) { }
+
+  __be_get_tabla_general(code: any) {
+    const params = { code : code }
+    this.gs.__be_get_table_general(params).subscribe((rest: any) => {
+      if(rest.statusCode == 200) {
+        switch (code) {
+          case "CATEGORIA":
+            rest.data.forEach((element: any) => {
+              this.elementsCategoria.push({
+                id_categoria: element.id,
+                descripcion: element.descripcion
+              })
+            });
+            break;
+          case "MARCA":
+            rest.data.forEach((element: any) => {
+              this.elementsMarca.push({
+                id_marca: element.id,
+                descripcion: element.descripcion
+              })
+            });
+            break;
+          case "TAMANO":
+            rest.data.forEach((element: any) => {
+              this.elementsTamano.push({
+                id_tamano: element.id,
+                descripcion: element.descripcion
+              })
+            });
+            break;
+          default:
+            break;
+        }
+      }
+    })
   }
 
   ngOnInit() {
@@ -53,7 +96,7 @@ export class TiendaComponent implements OnInit {
         car1.precio = value["precio"];
 
         this.lstCarrito.push(car1);
-      } 
+      }
     }
 
     this.httpClient.get("assets/data.json").subscribe(res =>{
@@ -68,17 +111,20 @@ export class TiendaComponent implements OnInit {
 
       //console.log(this.dataProducto);
     });
-  
+
+    this.__be_get_tabla_general('CATEGORIA');
+    this.__be_get_tabla_general('MARCA');
+    this.__be_get_tabla_general('TAMANO');
   }
 
   ProductoDetalle(pid: number){
-    this.router.navigate(['/product-detail', pid]); 
+    this.router.navigate(['/product-detail', pid]);
   }
 
   AnadirItem(id: number){
     //alert(id);
     //var filtered = JSON.parse(JSON.stringify(this.dataProducto)).filter(x => x.id == id);
-    
+
     let value: any;
     let esRepetido: boolean = false;
 
@@ -86,7 +132,7 @@ export class TiendaComponent implements OnInit {
       value = this.dataProducto[key];
       if(value["id"] == id)
         break;
-    } 
+    }
 
     this.lstCarrito.forEach( (element) => {
         if(element.idproducto == id){
@@ -108,7 +154,7 @@ export class TiendaComponent implements OnInit {
           return;
         }
     });
-    
+
     if(esRepetido == false){
       let car1 = new Carrito();
       car1.idproducto = value["id"];
@@ -119,9 +165,9 @@ export class TiendaComponent implements OnInit {
       car1.precio = value["precio"];
       this.lstCarrito.push(car1);
     }
-    
+
     localStorage.setItem("lstCarrito", JSON.stringify(this.lstCarrito));
-    this.router.navigate(['/carrito']); 
+    this.router.navigate(['/carrito']);
   }
 
 }

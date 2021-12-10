@@ -45,4 +45,4 @@ testem.log
 Thumbs.db
 
 # Files Version
-/package-lock.json
+package-lock.json

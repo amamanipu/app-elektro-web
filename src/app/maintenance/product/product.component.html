@@ -101,12 +101,19 @@
                                                 <div class="row">
                                                   <div class="col-lg-6">
                                                     <label for="ruta">Ruta de Imagen: </label>
-                                                    <input type="text" id="ruta" formControlName="ruta" placeholder="Ingresar Ruta de Imagen">
+                                                    <!-- <input type="text" id="ruta" formControlName="ruta" placeholder="Ingresar Ruta de Imagen"> -->
+                                                    <input type="file" id="ruta" formControlName="ruta" accept="image/jpeg, image/png" (change)="onFileSelect($event)" placeholder="Ingresar Ruta de Imagen">
                                                   </div>
-                                                  <div class="col-lg-6">
+                                                  <span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
+                                                    {{progress}}%
+                                                  </span>
+                                                  <span style="font-weight:bold;color:green;" *ngIf="message">
+                                                    {{message}}
+                                                  </span>
+                                                  <!-- <div class="col-lg-6">
                                                     <label for="nombre">Nombre de Imagen: </label>
                                                     <input type="text" id="nombre" formControlName="nombre" placeholder="Ingresar Nombre de Imagen">
-                                                  </div>
+                                                  </div> -->
                                                 </div>
                                               </div>
                                             </div>

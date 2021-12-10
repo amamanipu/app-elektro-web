@@ -1,8 +1,11 @@
+import { HttpEventType } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FileService } from 'src/app/services/file.service';
 import { GeneralService } from 'src/app/services/general.service';
 import { ProductService } from 'src/app/services/product.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-product',
@@ -10,6 +13,12 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+
+  progress: any;
+  message: any;
+  file: any;
+  fileName: any;
+  fileType: any;
 
   elements: any = [];
   headElements = ['ID', 'PRODUCTO', 'CATEGORIA', 'MARCA', 'PRECIO', 'ACCIONES'];
@@ -30,8 +39,8 @@ export class ProductComponent implements OnInit {
         stock: ['', [Validators.required]],
         imagenes: this.fb.array([
           this.fb.group({
-            nombre: ['', [Validators.required]],
-            ruta: ['', [Validators.required]],
+            nombre: [''],
+            ruta: [[], [Validators.required]],
             tipo: ['png']
           })
         ])
@@ -52,6 +61,7 @@ export class ProductComponent implements OnInit {
     private fb: FormBuilder,
     private readonly ps: ProductService,
     private readonly gs: GeneralService,
+    private readonly fs: FileService,
     private router: Router
   ) { }
 
@@ -126,18 +136,53 @@ export class ProductComponent implements OnInit {
   }
 
   __onSubmit() {
+    console.log(this.productForm.value);
     if(this.productForm.valid) {
-      this.productForm.value.id_categoria = parseInt(this.productForm.value.id_categoria);
-      this.productForm.value.id_marca = parseInt(this.productForm.value.id_marca);
-      this.productForm.value.precio = parseFloat(this.productForm.value.precio);
-      this.productForm.value.productoDetalles.forEach((element: any) => {
-        element.id_tamano = parseInt(element.id_tamano);
-        element.stock = parseInt(element.stock);
-      });;
-      this.__insert(this.productForm.value)
+      this.__upload(this.file);
     } else {
       alert('Formulario no válido');
     }
+  }
+
+  onFileSelect(event: any) {
+    if (event.target.files && event.target.files.length > 0) {
+      const file = event.target.files[0];
+      const ext =  file.name.split('.').pop();
+      const newId = uuidv4();
+      this.file = file;
+      this.fileName = this.file.name;
+      this.fileType = file.type;
+      console.log(this.file);
+      console.log(this.fileName);
+    }
+  }
+
+  __upload(file: any) {
+    this.fs.__be_upload(file).subscribe(
+      data => {
+        console.log(data)
+      },
+      err => {
+        console.log(err);
+        this.message = "Ocurrio un error: "+err;
+      },
+      () => {
+        console.log('complete')
+        this.productForm.value.id_categoria = parseInt(this.productForm.value.id_categoria);
+        this.productForm.value.id_marca = parseInt(this.productForm.value.id_marca);
+        this.productForm.value.precio = parseFloat(this.productForm.value.precio);
+        this.productForm.value.productoDetalles.forEach((element: any) => {
+          element.id_tamano = parseInt(element.id_tamano);
+          element.stock = parseInt(element.stock);
+          element.imagenes.forEach((imagen: any) => {
+            imagen.nombre=this.fileName;
+            imagen.ruta=`C:\\Fashion21\\productos\\${this.fileName}`; //Ruta del Servidor
+            imagen.tipo=this.fileType;
+          });
+        });
+        this.__insert(this.productForm.value)
+      }
+    )
   }
 
   __delete(id: any) {
