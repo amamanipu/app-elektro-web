@@ -17,29 +17,26 @@
                     </div>
                     <ul>
                         <li>
-                            <h4>Lima</h4>
+                            <h4>Sede principal</h4>
                             <p>195 E Parker Square Dr, Parker, CO 801 <br />+51 314-0958</p>
-                        </li>
-                        <li>
-                            <h4>Arequipa</h4>
-                            <p>109 Avenue Léon, 63 Clermont-Ferrand <br />+56 43-9893</p>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="contact__form">
-                    <form action="#">
+                    <form [formGroup]="contactForm" method="post" action="#">
                         <div class="row">
                             <div class="col-lg-6">
-                                <input type="text" placeholder="Nombre completo" class="form-control" >
+                                <input type="text" placeholder="Nombre completo" formControlName="nombres" class="form-control" >
                             </div>
                             <div class="col-lg-6">
-                                <input type="text" placeholder="Correo electrónico" class="form-control" >
+                                <input type="text" placeholder="Correo electrónico"  formControlName="correo" class="form-control" >
                             </div>
                             <div class="col-lg-12">
-                                <textarea placeholder="Mensaje" ></textarea>
-                                <button  class="site-btn">Enviar mensaje</button>
+                                <textarea placeholder="Mensaje" formControlName="comentarios" ></textarea>
+                                
+                                <button (click)="__onSubmit()" class="site-btn">Enviar mensaje</button>
                             </div>
                         </div>
                     </form>
